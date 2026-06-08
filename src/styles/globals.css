@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ──────────────────────────────────────────── */
+:root {
+  --color-navy:         #0b2a4e;
+  --color-navy-hover:   #0d3360;
+  --color-dark:         #1a1a1a;
+  --color-bg:           #ffffff;
+  --color-bg-light:     #f8f8f6;
+  --color-bg-off:       #f1f1f1;
+  --color-text:         #1a1a1a;
+  --color-text-body:    #333333;
+  --color-text-muted:   #888888;
+  --color-border:       #efefef;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition:    all 0.3s ease;
+}
+
+/* ─── Base Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+  font-family: 'Mulish', -apple-system, sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  letter-spacing: 0.015em;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #0b2a4e;
+  color: #ffffff;
+}
+
+*:focus-visible {
+  outline: 2px solid #0b2a4e;
+  outline-offset: 2px;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #cccccc; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0b2a4e; }
+
+/* ─── Nav link underline ─────────────────────────────────────── */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #0b2a4e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ─── Navy Button with arrow ─────────────────────────────────── */
+.btn-navy {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  background: #0b2a4e;
+  border: 1px solid #0b2a4e;
+  border-radius: 4px;
+  padding: 14px 28px;
+  overflow: hidden;
+  transition: color 0.3s ease, background 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-navy .btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+  margin-left: 0;
+}
+
+.btn-navy:hover {
+  color: #0b2a4e;
+  background: transparent;
+  padding: 14px 40px 14px 28px;
+}
+
+.btn-navy:hover .btn-arrow {
+  width: 18px;
+  opacity: 1;
+  margin-left: 10px;
+}
+
+/* ─── Outline Button ─────────────────────────────────────────── */
+.btn-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #0b2a4e;
+  background: transparent;
+  border: 1px solid #0b2a4e;
+  border-radius: 4px;
+  padding: 14px 28px;
+  transition: color 0.3s ease, background 0.3s ease, padding 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn-outline .btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: width 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+  margin-left: 0;
+}
+
+.btn-outline:hover {
+  background: #0b2a4e;
+  color: #ffffff;
+  padding: 14px 40px 14px 28px;
+}
+
+.btn-outline:hover .btn-arrow {
+  width: 18px;
+  opacity: 1;
+  margin-left: 10px;
+}
+
+/* White variant (for dark sections) */
+.btn-navy-white {
+  color: #0b2a4e;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-navy-white:hover {
+  color: #ffffff;
+  background: transparent;
+  border-color: #ffffff;
+}
+
+/* ─── Card styles ────────────────────────────────────────────── */
+.card-hover {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(11, 42, 78, 0.12);
+}
+
+/* Navy left border on hover */
+.card-hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #0b2a4e;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.card-hover:hover::before {
+  transform: scaleY(1);
+}
+
+/* ─── Divider ────────────────────────────────────────────────── */
+.section-divider {
+  width: 48px;
+  height: 2px;
+  background: #0b2a4e;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Select dropdown ────────────────────────────────────────── */
+select option {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* ─── Reduced Motion ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
