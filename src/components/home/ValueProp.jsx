@@ -24,7 +24,7 @@ export default function ValueProp() {
       <div className="max-w-content mx-auto px-6">
         <ScrollReveal><SectionLabel>What We Offer</SectionLabel></ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="font-serif font-semibold text-h2 text-navy mb-14 max-w-xl">
+          <h2 className="font-display font-semibold text-h2 text-navy mb-14 max-w-xl">
             Experienced. Strategic. Available.
           </h2>
         </ScrollReveal>
@@ -38,10 +38,10 @@ export default function ValueProp() {
         >
           {pillars.map(({ id, title, body }) => (
             <motion.div key={id} variants={itemVariants} className="group">
-              <span className="font-serif text-5xl font-semibold text-navy opacity-15 group-hover:opacity-30 transition-opacity duration-300 block mb-4 leading-none">
+              <span className="font-display text-5xl font-semibold text-navy opacity-15 group-hover:opacity-30 transition-opacity duration-300 block mb-4 leading-none">
                 {id}
               </span>
-              <h3 className="font-serif font-semibold text-h3 text-navy mb-3">{title}</h3>
+              <h3 className="font-display font-semibold text-h3 text-navy mb-3">{title}</h3>
               <p className="font-sans text-sm text-text-body leading-relaxed font-light">{body}</p>
             </motion.div>
           ))}

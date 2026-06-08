@@ -4,6 +4,10 @@
 
 /* ─── Design Tokens ──────────────────────────────────────────── */
 :root {
+  --font-sans:    "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    "Roboto Mono", "SFMono-Regular", Consolas, monospace;
+  --font-display: Inter, "Plus Jakarta Sans", -apple-system, "Segoe UI", sans-serif;
+
   --color-navy:         #0b2a4e;
   --color-navy-hover:   #0d3360;
   --color-dark:         #1a1a1a;
@@ -26,16 +30,68 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  font-size: 112.5%; /* ~18px baseline */
+}
 
 body {
   background-color: #ffffff;
   color: #333333;
-  font-family: 'Mulish', -apple-system, sans-serif;
-  font-weight: 300;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.75;
-  letter-spacing: 0.015em;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+/* ─── Typography utilities ───────────────────────────────────── */
+.text-xs,
+.text-sm {
+  font-size: 0.888rem; /* ~16px accessibility floor */
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4.4rem, 7.25vw, 8.6rem);
+  font-weight: 400;
+  letter-spacing: -0.075em;
+  line-height: 1.05;
+}
+
+.hero-copy {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 1.55vw, 1.72rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+}
+
+.hero-subheadline {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.site-nav__link {
+  font-family: var(--font-mono);
+  font-size: 0.888rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.site-nav__cta,
+.hero-action {
+  font-family: var(--font-mono);
+  font-size: 0.888rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 ::selection {
@@ -84,10 +140,10 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 600;
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.888rem;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   text-decoration: none;
   color: #ffffff;
@@ -128,10 +184,10 @@ body {
   position: relative;
   display: inline-flex;
   align-items: center;
-  font-family: 'Mulish', sans-serif;
-  font-weight: 600;
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.888rem;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   text-decoration: none;
   color: #0b2a4e;

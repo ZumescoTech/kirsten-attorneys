@@ -13,7 +13,7 @@ export default function AboutStory() {
           <ScrollReveal direction="left">
             <div>
               <SectionLabel>The Attorney</SectionLabel>
-              <h2 className="font-serif text-h2 text-navy mt-6 mb-6 leading-[1.1]">
+              <h2 className="font-display text-h2 text-navy mt-6 mb-6 leading-[1.1]">
                 29+ years. Two sides of justice.
               </h2>
               <p className="font-sans text-sm text-text-body leading-relaxed mb-5 font-light">
@@ -81,7 +81,7 @@ export default function AboutStory() {
 
           <ScrollReveal direction="right" delay={0.1}>
             <div>
-              <h3 className="font-serif text-h3 text-navy mb-4">Specialist Training</h3>
+              <h3 className="font-display text-h3 text-navy mb-4">Specialist Training</h3>
               <p className="font-sans text-sm text-text-body leading-relaxed mb-5 font-light">
                 During his time at both the NPA and Legal Aid SA, André attended numerous
                 specialist courses and seminars covering DNA evidence examination and testing,

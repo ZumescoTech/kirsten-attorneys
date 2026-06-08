@@ -18,8 +18,8 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <span className="font-serif text-2xl font-semibold text-white block mb-1 tracking-wide">André Kirsten</span>
-            <span className="font-sans text-[0.6rem] uppercase tracking-[0.2em] text-white opacity-50 block mb-5">Attorneys</span>
+            <span className="font-display text-2xl font-semibold text-white block mb-1 tracking-wide">André Kirsten</span>
+            <span className="font-mono text-sm uppercase tracking-[-0.03em] text-white opacity-50 block mb-5">Attorneys</span>
             <p className="font-sans text-sm text-white opacity-60 leading-relaxed">
               Criminal Defence Specialist<br />
               Bellville, Cape Town, South Africa
@@ -46,7 +46,7 @@ export default function Footer() {
             <div className="space-y-4">
               <div>
                 <p className="font-sans text-xs text-white opacity-50 uppercase tracking-wider mb-1">Emergency 24/7</p>
-                <a href="tel:0726045324" className="font-serif text-xl font-semibold text-white hover:opacity-80 transition-opacity flex items-center gap-2">
+                <a href="tel:0726045324" className="font-display text-xl font-semibold text-white hover:opacity-80 transition-opacity flex items-center gap-2">
                   <Phone size={16} />
                   072 604 5324
                 </a>

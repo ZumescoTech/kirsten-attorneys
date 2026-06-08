@@ -62,10 +62,10 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link to="/" aria-label="André Kirsten Attorneys — Home" className="flex-shrink-0">
-              <span className="font-serif text-xl font-semibold text-navy leading-none block tracking-wide">
+              <span className="font-display text-xl font-medium text-navy leading-none block tracking-[-0.03em]">
                 André Kirsten
               </span>
-              <span className="font-sans text-[0.58rem] uppercase tracking-[0.2em] text-text-muted block mt-0.5">
+              <span className="font-mono text-sm uppercase tracking-[-0.03em] text-text-muted block mt-0.5">
                 Attorneys
               </span>
             </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
                 <Link
                   key={to}
                   to={to}
-                  className={`nav-link font-sans text-xs font-semibold uppercase tracking-[0.1em] transition-colors duration-200 pb-0.5 ${
+                  className={`nav-link site-nav__link transition-colors duration-200 pb-0.5 ${
                     pathname === to ? 'text-navy active' : 'text-text-muted hover:text-navy'
                   }`}
                 >
@@ -89,8 +89,8 @@ export default function Navbar() {
             <div className="flex items-center gap-3">
               <a
                 href="tel:0726045324"
-                className="btn-navy hidden lg:inline-flex items-center gap-2"
-                style={{ padding: '10px 20px', fontSize: '0.75rem' }}
+                className="btn-navy site-nav__cta hidden lg:inline-flex items-center gap-2"
+                style={{ padding: '10px 20px' }}
               >
                 <Phone size={12} />
                 Call 24/7

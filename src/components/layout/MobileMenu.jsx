@@ -36,7 +36,7 @@ export default function MobileMenu({ isOpen, onClose }) {
         >
           {/* Header */}
           <div className="flex justify-between items-center px-6 py-5 border-b border-border-subtle">
-            <span className="font-serif text-lg font-semibold text-navy">André Kirsten Attorneys</span>
+            <span className="font-display text-lg font-semibold text-navy">André Kirsten Attorneys</span>
             <button onClick={onClose} aria-label="Close menu" className="text-text-muted hover:text-navy transition-colors p-2">
               <X size={24} />
             </button>
@@ -57,7 +57,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                 >
                   <Link
                     to={to}
-                    className={`block font-serif text-3xl font-semibold py-3 border-b border-border-subtle transition-colors ${
+                    className={`block font-display text-3xl font-semibold py-3 border-b border-border-subtle transition-colors ${
                       pathname === to ? 'text-navy' : 'text-text-primary hover:text-navy'
                     }`}
                   >
@@ -67,15 +67,6 @@ export default function MobileMenu({ isOpen, onClose }) {
               ))}
             </motion.ul>
           </nav>
-
-          {/* Emergency */}
-          <div className="px-8 py-8 bg-navy">
-            <p className="font-sans text-xs uppercase tracking-[0.12em] text-white opacity-60 mb-2">24/7 Emergency Line</p>
-            <a href="tel:0726045324" className="inline-flex items-center gap-3 font-serif text-2xl text-white font-semibold hover:opacity-80 transition-opacity">
-              <Phone size={20} />
-              072 604 5324
-            </a>
-          </div>
         </motion.div>
       )}
     </AnimatePresence>

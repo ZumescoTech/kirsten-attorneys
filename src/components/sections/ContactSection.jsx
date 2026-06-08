@@ -31,7 +31,7 @@ export default function ContactSection() {
                 </p>
                 <a
                   href="tel:0726045324"
-                  className="font-serif text-4xl text-navy hover:text-navy-hover transition-colors duration-200 block"
+                  className="font-display text-4xl text-navy hover:text-navy-hover transition-colors duration-200 block"
                 >
                   072 604 5324
                 </a>
@@ -138,7 +138,7 @@ export default function ContactSection() {
           <ScrollReveal direction="right" delay={0.15}>
             <div>
               <SectionLabel>Send a Message</SectionLabel>
-              <h2 className="font-serif text-h2 text-navy mt-6 mb-8 leading-[1.1]">
+              <h2 className="font-display text-h2 text-navy mt-6 mb-8 leading-[1.1]">
                 Speak to André directly.
               </h2>
               <p className="font-sans text-sm text-text-body leading-relaxed mb-8 font-light">

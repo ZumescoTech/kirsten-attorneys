@@ -38,7 +38,7 @@ export default function Values() {
           <SectionLabel>How We Work</SectionLabel>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="font-serif text-h2 text-navy mt-6 mb-16 max-w-xl">
+          <h2 className="font-display text-h2 text-navy mt-6 mb-16 max-w-xl">
             The principles behind every case.
           </h2>
         </ScrollReveal>
@@ -55,7 +55,7 @@ export default function Values() {
               <span className="font-sans text-5xl font-bold text-navy opacity-15 group-hover:opacity-30 transition-opacity duration-300 block mb-5 leading-none">
                 {id}
               </span>
-              <h3 className="font-serif text-h3 text-navy mb-3">{title}</h3>
+              <h3 className="font-display text-h3 text-navy mb-3">{title}</h3>
               <p className="font-sans text-sm text-text-body leading-relaxed font-light">{body}</p>
             </motion.div>
           ))}

@@ -30,7 +30,7 @@ export default function CTABanner() {
 
       <div className="relative max-w-content mx-auto px-6 text-center">
         <ScrollReveal delay={0.2}>
-          <h2 className="font-serif text-h1 text-white mb-4 leading-[1.1]">
+          <h2 className="font-display text-h1 text-white mb-4 leading-[1.1]">
             Arrested? Don't wait.<br />Call André now.
           </h2>
         </ScrollReveal>

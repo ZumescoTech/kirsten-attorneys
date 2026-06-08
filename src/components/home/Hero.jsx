@@ -26,7 +26,7 @@ export default function Hero() {
 
         {/* Label */}
         <motion.p
-          className="font-sans text-xs uppercase tracking-[0.2em] text-white opacity-70 mb-8"
+          className="hero-subheadline uppercase text-white opacity-70 mb-8"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 0.7, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1, ease }}
@@ -35,7 +35,7 @@ export default function Hero() {
         </motion.p>
 
         {/* Headline word-by-word */}
-        <h1 className="font-serif font-semibold text-[clamp(2.4rem,5vw,3.5rem)] text-white mb-6 leading-[1.15]">
+        <h1 className="hero-title text-white mb-6">
           {words.map((word, i) => (
             <motion.span
               key={i}
@@ -51,7 +51,7 @@ export default function Hero() {
 
         {/* Tagline */}
         <motion.p
-          className="font-sans text-sm text-white opacity-75 tracking-wide mb-4 font-light"
+          className="hero-copy text-white opacity-75 mb-4"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 0.75, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7, ease }}
@@ -61,7 +61,7 @@ export default function Hero() {
 
         {/* Body */}
         <motion.p
-          className="font-sans text-sm text-white opacity-65 max-w-xl mx-auto leading-relaxed mb-10 font-light"
+          className="hero-subheadline text-white opacity-65 max-w-xl mx-auto leading-relaxed mb-10"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 0.65, y: 0 }}
           transition={{ duration: 0.5, delay: 0.85, ease }}
@@ -77,11 +77,11 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.0, ease }}
         >
-          <GoldButton href="tel:0726045324" white>
+          <GoldButton href="tel:0726045324" white className="hero-action">
             <Phone size={14} />
             Call Now — 24/7 Emergency
           </GoldButton>
-          <OutlineButton to="/contact" className="border-white text-white hover:bg-white hover:text-navy">
+          <OutlineButton to="/contact" className="hero-action border-white text-white hover:bg-white hover:text-navy">
             Book a Consultation
           </OutlineButton>
         </motion.div>
@@ -96,7 +96,7 @@ export default function Hero() {
           {badges.map((badge) => (
             <motion.span
               key={badge}
-              className="font-sans text-xs uppercase tracking-[0.1em] text-white opacity-55 border border-white border-opacity-20 px-4 py-2 rounded-sm"
+              className="font-mono text-sm uppercase tracking-[-0.03em] text-white opacity-55 border border-white border-opacity-20 px-4 py-2 rounded-sm"
               variants={{
                 hidden:  { opacity: 0, y: 12 },
                 visible: { opacity: 0.55, y: 0, transition: { duration: 0.4, ease } },
@@ -117,7 +117,7 @@ export default function Hero() {
         onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
         aria-label="Scroll to content"
       >
-        <span className="font-sans text-[0.6rem] uppercase tracking-[0.16em]">Scroll</span>
+        <span className="font-mono text-sm uppercase tracking-[-0.03em]">Scroll</span>
         <ChevronDown size={16} className="animate-bounce-slow" />
       </motion.button>
     </section>

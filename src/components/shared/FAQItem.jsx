@@ -12,7 +12,7 @@ export default function FAQItem({ question, answer }) {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
       >
-        <span className="font-serif text-base text-navy group-hover:text-navy-hover transition-colors duration-200 leading-snug">
+        <span className="font-display text-base text-navy group-hover:text-navy-hover transition-colors duration-200 leading-snug">
           {question}
         </span>
         <motion.div

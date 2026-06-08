@@ -29,7 +29,7 @@ export default function AboutSnippet() {
           <ScrollReveal direction="right" delay={0.15}>
             <div>
               <SectionLabel>About André Kirsten</SectionLabel>
-              <h2 className="font-serif font-semibold text-h2 text-navy mt-4 mb-6 leading-[1.15]">
+              <h2 className="font-display font-semibold text-h2 text-navy mt-4 mb-6 leading-[1.15]">
                 A career built on both sides of the courtroom.
               </h2>
               <p className="font-sans text-sm text-text-body leading-relaxed mb-4 font-light">
@@ -46,7 +46,7 @@ export default function AboutSnippet() {
 
               {/* Pull quote */}
               <blockquote className="border-l-2 border-navy pl-5 mb-8">
-                <p className="font-serif text-lg italic text-navy leading-relaxed">
+                <p className="font-display text-lg italic text-navy leading-relaxed">
                   "29+ years of combined criminal litigation experience as both prosecutor and defence attorney."
                 </p>
               </blockquote>

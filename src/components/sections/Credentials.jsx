@@ -32,7 +32,7 @@ export default function Credentials() {
           <SectionLabel>Qualifications & Experience</SectionLabel>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="font-serif text-h2 text-navy mt-6 mb-16 max-w-lg">
+          <h2 className="font-display text-h2 text-navy mt-6 mb-16 max-w-lg">
             A record built in courtrooms, not boardrooms.
           </h2>
         </ScrollReveal>
@@ -54,7 +54,7 @@ export default function Credentials() {
                 {id}
               </span>
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between w-full gap-1">
-                <h3 className="font-serif text-lg text-navy flex-shrink-0 mr-8">
+                <h3 className="font-display text-lg text-navy flex-shrink-0 mr-8">
                   {title}
                 </h3>
                 <p className="font-sans text-sm text-text-muted font-light sm:text-right">{detail}</p>

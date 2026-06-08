@@ -28,7 +28,7 @@ export default function InnerHero({ label, headline, tagline, bgImage }) {
       <div className="relative z-10 max-w-3xl mx-auto px-6 pt-28 pb-20 sm:pt-36 sm:pb-24">
 
         <motion.p
-          className="font-sans text-xs uppercase tracking-[0.18em] text-white opacity-60 mb-6"
+          className="hero-subheadline uppercase text-white opacity-60 mb-6"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 0.6, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: easeOutExpo }}
@@ -37,7 +37,7 @@ export default function InnerHero({ label, headline, tagline, bgImage }) {
         </motion.p>
 
         <motion.h1
-          className="font-serif text-[clamp(2rem,4vw,4rem)] text-white mb-6 leading-[1.1]"
+          className="hero-title text-white mb-6"
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35, ease: easeOutExpo }}
@@ -46,7 +46,7 @@ export default function InnerHero({ label, headline, tagline, bgImage }) {
         </motion.h1>
 
         <motion.p
-          className="font-sans text-sm text-white opacity-70 max-w-xl mx-auto leading-relaxed font-light"
+          className="hero-copy text-white opacity-70 max-w-xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 0.7, y: 0 }}
           transition={{ duration: 0.6, delay: 0.55, ease: easeOutExpo }}
@@ -74,7 +74,7 @@ export default function InnerHero({ label, headline, tagline, bgImage }) {
         aria-label="Scroll to content"
         whileHover={{ opacity: 0.7 }}
       >
-        <span className="font-sans text-[0.6rem] uppercase tracking-[0.16em]">Scroll</span>
+        <span className="font-mono text-sm uppercase tracking-[-0.03em]">Scroll</span>
         <ChevronDown size={16} className="animate-bounce-slow" />
       </motion.button>
     </section>

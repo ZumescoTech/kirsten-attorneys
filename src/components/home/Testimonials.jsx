@@ -41,7 +41,7 @@ export default function Testimonials() {
           <SectionLabel>Client Testimonials</SectionLabel>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="font-serif text-h2 text-navy mt-6 mb-16">
+          <h2 className="font-display text-h2 text-navy mt-6 mb-16">
             Trusted when it matters most.
           </h2>
         </ScrollReveal>
@@ -64,7 +64,7 @@ export default function Testimonials() {
                 exit="exit"
                 className="text-center"
               >
-                <p className="font-serif text-xl md:text-2xl italic text-navy leading-relaxed mb-8">
+                <p className="font-display text-xl md:text-2xl italic text-navy leading-relaxed mb-8">
                   "{quote}"
                 </p>
                 <div>

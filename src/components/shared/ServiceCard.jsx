@@ -10,7 +10,7 @@ export default function ServiceCard({ id, title, body, icon }) {
         {id}
       </span>
       <Icon size={20} className="text-navy opacity-40 mb-4 flex-shrink-0" aria-hidden="true" />
-      <h3 className="font-serif text-h3 text-navy mb-3">{title}</h3>
+      <h3 className="font-display text-h3 text-navy mb-3">{title}</h3>
       <p className="font-sans text-sm text-text-body leading-relaxed flex-1 font-light">{body}</p>
     </div>
   )

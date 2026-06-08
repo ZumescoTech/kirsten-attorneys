@@ -22,7 +22,7 @@ export default function ResourcesGrid() {
           <SectionLabel>Legal Guides</SectionLabel>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="font-serif text-h2 text-navy mt-6 mb-16 max-w-xl">
+          <h2 className="font-display text-h2 text-navy mt-6 mb-16 max-w-xl">
             Know your rights before you need them.
           </h2>
         </ScrollReveal>

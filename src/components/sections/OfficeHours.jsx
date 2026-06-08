@@ -17,7 +17,7 @@ export default function OfficeHours() {
           <SectionLabel>Availability</SectionLabel>
         </ScrollReveal>
         <ScrollReveal delay={0.1}>
-          <h2 className="font-serif text-h2 text-navy mt-6 mb-16 max-w-lg">
+          <h2 className="font-display text-h2 text-navy mt-6 mb-16 max-w-lg">
             We're here when you need us.
           </h2>
         </ScrollReveal>
@@ -27,7 +27,7 @@ export default function OfficeHours() {
           {/* Hours table */}
           <ScrollReveal direction="left">
             <div className="bg-white border border-border-subtle rounded-sm p-8">
-              <h3 className="font-serif text-lg text-navy mb-6">Standard Office Hours</h3>
+              <h3 className="font-display text-lg text-navy mb-6">Standard Office Hours</h3>
               <div className="space-y-0">
                 {hours.map(({ day, time }) => (
                   <div
@@ -57,7 +57,7 @@ export default function OfficeHours() {
           <ScrollReveal direction="right" delay={0.1}>
             <div className="space-y-8">
               <div>
-                <h3 className="font-serif text-lg text-navy mb-3">Virtual Consultations</h3>
+                <h3 className="font-display text-lg text-navy mb-3">Virtual Consultations</h3>
                 <p className="font-sans text-sm text-text-body leading-relaxed font-light">
                   Virtual and online consultations are available for initial case assessments.
                   We recommend scheduling appointments during office hours for detailed
@@ -66,7 +66,7 @@ export default function OfficeHours() {
               </div>
 
               <div>
-                <h3 className="font-serif text-lg text-navy mb-3">Emergency Line</h3>
+                <h3 className="font-display text-lg text-navy mb-3">Emergency Line</h3>
                 <p className="font-sans text-sm text-text-body leading-relaxed mb-6 font-light">
                   If you have been arrested or require urgent legal assistance outside of
                   office hours, call our emergency line immediately. André is available 24

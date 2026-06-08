@@ -60,7 +60,7 @@ export default function ContactForm() {
           className="flex flex-col items-start gap-4 py-10"
         >
           <CheckCircle size={40} className="text-navy" />
-          <h3 className="font-serif text-2xl text-navy">Message received.</h3>
+          <h3 className="font-display text-2xl text-navy">Message received.</h3>
           <p className="font-sans text-sm text-text-body leading-relaxed max-w-sm font-light">
             Thank you, {fields.name}. We will be in touch shortly on{' '}
             <span className="text-text-primary font-semibold">{fields.phone}</span>.

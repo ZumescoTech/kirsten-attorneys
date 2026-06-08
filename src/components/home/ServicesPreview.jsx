@@ -45,7 +45,7 @@ export default function ServicesPreview() {
 
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <ScrollReveal delay={0.1}>
-            <h2 className="font-serif text-h2 text-navy max-w-lg">
+            <h2 className="font-display text-h2 text-navy max-w-lg">
               Vigorous defence across all serious criminal matters.
             </h2>
           </ScrollReveal>
@@ -78,7 +78,7 @@ export default function ServicesPreview() {
                 {id}
               </span>
               <Icon size={22} className="text-navy opacity-40 mb-4" />
-              <h3 className="font-serif text-h3 text-navy mb-3">{title}</h3>
+              <h3 className="font-display text-h3 text-navy mb-3">{title}</h3>
               <p className="font-sans text-sm text-text-body leading-relaxed font-light">{body}</p>
             </motion.div>
           ))}
