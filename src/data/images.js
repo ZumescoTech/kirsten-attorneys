@@ -5,13 +5,13 @@ export const IMAGES = {
   andreFallback: '/images/andre.png',
 
   hero: {
-    home:     '/images/nbXdS.jpg',
-    about:    '/images/GZTNN.jpg',
-    services: '/images/nbXdS.jpg',
-    contact:  '/images/GZTNN.jpg',
-    resources:'/images/nbXdS.jpg',
-    faqs:     '/images/GZTNN.jpg',
-    default:  '/images/nbXdS.jpg',
+    home:      '/images/hero-background.jpg',
+    about:     '/images/hero-background.jpg',
+    services:  '/images/hero-background.jpg',
+    contact:   '/images/hero-background.jpg',
+    resources: '/images/hero-background.jpg',
+    faqs:      '/images/hero-background.jpg',
+    default:   '/images/hero-background.jpg',
   },
 
   office: {
