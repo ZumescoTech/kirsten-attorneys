@@ -1,8 +1,7 @@
 import PageWrapper from '../components/layout/PageWrapper'
 import InnerHero from '../components/shared/InnerHero'
 import ContactSection from '../components/sections/ContactSection'
-
-const CONTACT_BG = 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=2000&auto=format&fit=crop'
+import { IMAGES } from '../data/images'
 
 export default function Contact() {
   return (
@@ -11,7 +10,7 @@ export default function Contact() {
         label="Get In Touch"
         headline="Speak to André directly."
         tagline="No call centres. No assistants. Your case deserves the attorney's personal attention from day one."
-        bgImage={CONTACT_BG}
+        bgImage={IMAGES.hero.contact}
       />
       <ContactSection />
     </PageWrapper>

@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom'
 import { ArrowRight, BookOpen } from 'lucide-react'
 
-export default function ResourceCard({ id, title, summary }) {
+export default function ResourceCard({ id, title, summary, to }) {
   return (
     <div className="card-hover bg-white border border-border-subtle rounded-sm p-8 overflow-hidden h-full flex flex-col">
       <div className="flex items-center gap-3 mb-5">
@@ -9,10 +10,17 @@ export default function ResourceCard({ id, title, summary }) {
       </div>
       <h3 className="font-display text-lg text-navy mb-4 leading-snug flex-1">{title}</h3>
       <p className="font-sans text-sm text-text-body leading-relaxed mb-6 font-light">{summary}</p>
-      <button className="inline-flex items-center gap-2 font-sans text-sm text-navy hover:text-navy-hover transition-colors duration-200 group self-start mt-auto">
-        Read Guide
-        <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
-      </button>
+      {to ? (
+        <Link to={to} className="inline-flex items-center gap-2 font-sans text-sm text-navy hover:text-navy-hover transition-colors duration-200 group self-start mt-auto">
+          Read Guide
+          <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1" />
+        </Link>
+      ) : (
+        <span className="inline-flex items-center gap-2 font-sans text-sm text-text-muted self-start mt-auto">
+          Read Guide
+          <ArrowRight size={14} />
+        </span>
+      )}
     </div>
   )
 }

@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 import GoldButton from '../ui/GoldButton'
+import { IMAGES } from '../../data/images'
 
 export default function AboutSnippet() {
   return (
@@ -14,10 +13,11 @@ export default function AboutSnippet() {
           <ScrollReveal direction="left">
             <div className="relative bg-bg-light overflow-hidden rounded-sm" style={{ aspectRatio: '4/5' }}>
               <img
-                src="/andre.png"
-                alt="André Kirsten — Criminal Defence Attorney, Bellville Cape Town"
-                className="w-full h-full object-cover object-top"
+                src={IMAGES.andre}
+                alt="André Kirsten, criminal defence attorney, Bellville Cape Town"
+                className="w-full h-full object-cover object-center"
                 loading="lazy"
+                onError={(e) => { e.currentTarget.src = IMAGES.andreFallback }}
               />
               {/* Navy corner accents */}
               <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-navy opacity-30" />

@@ -1,7 +1,6 @@
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
-
-const SERVICES_IMAGE = 'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?w=800&auto=format&fit=crop'
+import { IMAGES } from '../../data/images'
 
 export default function AboutStory() {
   return (
@@ -37,10 +36,11 @@ export default function AboutStory() {
           <ScrollReveal direction="right" delay={0.1}>
             <div className="relative aspect-[4/5] rounded-sm overflow-hidden bg-bg-light">
               <img
-                src="/andre.png"
-                alt="André Kirsten — Criminal Defence Attorney"
-                className="w-full h-full object-cover object-top"
+                src={IMAGES.andre}
+                alt="André Kirsten, criminal defence attorney, Bellville Cape Town"
+                className="w-full h-full object-cover object-center"
                 loading="lazy"
+                onError={(e) => { e.currentTarget.src = IMAGES.andreFallback }}
               />
               <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-navy opacity-30" />
               <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-navy opacity-30" />
@@ -69,9 +69,9 @@ export default function AboutStory() {
           <ScrollReveal direction="left">
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden">
               <img
-                src={SERVICES_IMAGE}
-                alt="Western Cape High Court, Cape Town"
-                className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+                src={IMAGES.office.interior}
+                alt="Modern law office interior, Bellville Cape Town"
+                className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
                 loading="lazy"
               />
               <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-navy opacity-30" />

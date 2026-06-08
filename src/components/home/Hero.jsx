@@ -2,10 +2,11 @@ import { motion } from 'framer-motion'
 import { Phone, ChevronDown } from 'lucide-react'
 import GoldButton from '../ui/GoldButton'
 import OutlineButton from '../ui/OutlineButton'
-
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=2000&auto=format&fit=crop'
-const headline = "Don't let a criminal charge ruin your life."
-const words = headline.split(' ')
+import { IMAGES } from '../../data/images'
+const seoHeadline = 'Criminal Defence Lawyer Cape Town'
+const seoWords = seoHeadline.split(' ')
+const taglineHeadline = "Don't let a criminal charge ruin your life."
+const taglineWords = taglineHeadline.split(' ')
 const ease = [0.4, 0, 0.2, 1]
 
 const badges = ['Former NPA Prosecutor', '29+ Years Experience', 'Multilingual', 'Western Cape Wide']
@@ -18,7 +19,7 @@ export default function Hero() {
       aria-label="Hero"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-center bg-cover bg-no-repeat" style={{ backgroundImage: `url('${HERO_IMAGE}')` }} aria-hidden="true" />
+      <div className="absolute inset-0 bg-center bg-cover bg-no-repeat" style={{ backgroundImage: `url('${IMAGES.hero.home}')` }} aria-hidden="true" />
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(7,29,54,0.82) 0%, rgba(11,42,78,0.75) 100%)' }} aria-hidden="true" />
 
       {/* Content */}
@@ -34,9 +35,9 @@ export default function Hero() {
           Criminal Defence Attorneys · Cape Town &amp; Western Cape
         </motion.p>
 
-        {/* Headline word-by-word */}
-        <h1 className="hero-title text-white mb-6">
-          {words.map((word, i) => (
+        {/* Primary H1 — target keyword */}
+        <h1 className="hero-title text-white mb-4">
+          {seoWords.map((word, i) => (
             <motion.span
               key={i}
               className="inline-block mr-[0.2em] last:mr-0"
@@ -47,14 +48,29 @@ export default function Hero() {
               {word}
             </motion.span>
           ))}
+          <span className="block text-[0.42em] font-medium tracking-[-0.05em] mt-3 opacity-90">
+            André Kirsten Attorneys
+          </span>
         </h1>
 
-        {/* Tagline */}
+        {/* Emotional headline */}
         <motion.p
           className="hero-copy text-white opacity-75 mb-4"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 0.75, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7, ease }}
+          aria-label={taglineHeadline}
+        >
+          {taglineWords.map((word, i) => (
+            <span key={i} className="inline-block mr-[0.2em] last:mr-0">{word}</span>
+          ))}
+        </motion.p>
+
+        <motion.p
+          className="hero-subheadline text-white opacity-70 mb-4"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 0.7, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.8, ease }}
         >
           You have everything to gain. We are on call 24 hours a day.
         </motion.p>

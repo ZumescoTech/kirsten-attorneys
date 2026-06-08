@@ -4,12 +4,14 @@ export const resources = [
     title: "Don't Talk to the Police — 5 Deadly Mistakes You're Making When Dealing with the Police",
     summary:
       "Most people damage their own cases before a lawyer even arrives. This guide explains your rights under the South African Constitution and what to say — and never say — when police approach you.",
+    to: '/blog/what-happens-after-arrest-south-africa',
   },
   {
     id: '02',
     title: '6 Things You Must Never Do If You Want Bail',
     summary:
       "When you're suspected of a crime and the police come knocking, there are critical mistakes that will cost you your freedom. Know them before you need to.",
+    to: '/blog/bail-application-cape-town',
   },
   {
     id: '03',
@@ -22,6 +24,7 @@ export const resources = [
     title: '5 Steps to Find a Top DUI Lawyer in South Africa',
     summary:
       'A DUI conviction carries a fine up to R120,000, up to 6 years imprisonment, and automatic licence suspension. Not all DUI lawyers are equal — here is how to find the right one.',
+    to: '/blog/dui-attorney-bellville',
   },
   {
     id: '05',

@@ -3,6 +3,7 @@ import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 import GoldButton from '../ui/GoldButton'
 import ContactForm from '../shared/ContactForm'
+import { MAPS } from '../../data/images'
 
 const serviceAreas = [
   "All Cape Town Magistrates' Courts",
@@ -113,19 +114,19 @@ export default function ContactSection() {
                 </p>
                 <div className="relative w-full rounded-sm overflow-hidden border border-border-subtle" style={{ paddingBottom: '56.25%', height: 0 }}>
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.0!2d18.6300!3d-33.8889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s25+Nelson+Street+Oak+Glen+Bellville+Cape+Town!5e0!3m2!1sen!2sza!4v1700000000000"
+                    src={MAPS.embedUrl}
                     className="absolute inset-0 w-full h-full"
                     style={{ border: 0, filter: 'grayscale(40%) contrast(90%)' }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="André Kirsten Attorneys — 25 Nelson Street, Oak Glen, Bellville"
+                    title="André Kirsten Lawyer — Bellville, Cape Town"
                   />
                 </div>
               </div>
 
               <GoldButton
-                href="https://www.google.com/maps/dir/?api=1&destination=25+Nelson+Street,+Oak+Glen,+Bellville,+Cape+Town"
+                href={MAPS.placeUrl}
                 className="mt-2"
               >
                 <MapPin size={15} />

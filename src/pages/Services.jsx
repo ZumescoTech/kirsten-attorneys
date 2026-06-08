@@ -2,6 +2,7 @@ import PageWrapper from '../components/layout/PageWrapper'
 import InnerHero from '../components/shared/InnerHero'
 import ServicesGrid from '../components/sections/ServicesGrid'
 import CTABanner from '../components/home/CTABanner'
+import { IMAGES } from '../data/images'
 
 export default function Services() {
   return (
@@ -10,6 +11,7 @@ export default function Services() {
         label="Criminal Defence Services"
         headline="Every charge demands a committed defence."
         tagline="From bail applications to High Court appeals — we handle the full spectrum of criminal litigation in the Western Cape."
+        bgImage={IMAGES.hero.services}
       />
       <ServicesGrid />
       <CTABanner />

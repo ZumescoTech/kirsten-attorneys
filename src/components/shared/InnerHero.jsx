@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { IMAGES } from '../../data/images'
 
 const easeOutExpo = [0.16, 1, 0.3, 1]
-const DEFAULT_BG = 'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?w=2000&auto=format&fit=crop'
 
 export default function InnerHero({ label, headline, tagline, bgImage }) {
-  const bg = bgImage || DEFAULT_BG
+  const bg = bgImage || IMAGES.hero.default
 
   return (
     <section

@@ -1,0 +1,3 @@
+# Cloudflare Pages — serve prerendered HTML, fallback to SPA shell
+/blog/*  /blog/:splat  200
+/*       /index.html   200

@@ -3,10 +3,18 @@ import { Link } from 'react-router-dom'
 import { Phone, ArrowRight } from 'lucide-react'
 import ScrollReveal from '../ui/ScrollReveal'
 import GoldButton from '../ui/GoldButton'
+import { IMAGES } from '../../data/images'
 
 export default function CTABanner() {
   return (
     <section className="py-[7.5rem] bg-navy relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-center bg-cover bg-no-repeat opacity-20"
+        style={{ backgroundImage: `url('${IMAGES.office.interior}')` }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-navy/85" aria-hidden="true" />
+
       {/* Decorative lines */}
       <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center pointer-events-none px-6">
         <motion.div

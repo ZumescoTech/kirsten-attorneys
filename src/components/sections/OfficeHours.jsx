@@ -2,6 +2,7 @@ import { Phone } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 import GoldButton from '../ui/GoldButton'
+import { IMAGES } from '../../data/images'
 
 const hours = [
   { day: 'Monday – Friday',    time: '08:00 – 17:00' },
@@ -56,6 +57,17 @@ export default function OfficeHours() {
           {/* Right info block */}
           <ScrollReveal direction="right" delay={0.1}>
             <div className="space-y-8">
+              <div className="relative aspect-[16/10] rounded-sm overflow-hidden">
+                <img
+                  src={IMAGES.andre}
+                  alt="André Kirsten, criminal defence attorney, at his Bellville office"
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                  onError={(e) => { e.currentTarget.src = IMAGES.andreFallback }}
+                />
+                <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-white opacity-40" />
+                <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-white opacity-40" />
+              </div>
               <div>
                 <h3 className="font-display text-lg text-navy mb-3">Virtual Consultations</h3>
                 <p className="font-sans text-sm text-text-body leading-relaxed font-light">

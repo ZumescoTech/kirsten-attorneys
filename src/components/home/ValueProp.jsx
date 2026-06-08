@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
+import { IMAGES } from '../../data/images'
 
 const pillars = [
   { id: '01', title: '24/7 Availability',      body: 'We are on call 24 hours a day, throughout the year. Arrests, bail hearings, and crises do not follow business hours — and neither do we. Call 072 604 5324 at any time.' },
@@ -23,11 +24,24 @@ export default function ValueProp() {
     <section className="py-24 bg-bg-light">
       <div className="max-w-content mx-auto px-6">
         <ScrollReveal><SectionLabel>What We Offer</SectionLabel></ScrollReveal>
-        <ScrollReveal delay={0.1}>
-          <h2 className="font-display font-semibold text-h2 text-navy mb-14 max-w-xl">
-            Experienced. Strategic. Available.
-          </h2>
-        </ScrollReveal>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-14">
+          <ScrollReveal delay={0.1}>
+            <h2 className="font-display font-semibold text-h2 text-navy max-w-xl">
+              Experienced. Strategic. Available.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15} direction="right">
+            <div className="relative aspect-[16/9] rounded-sm overflow-hidden">
+              <img
+                src={IMAGES.office.consult}
+                alt="Professional legal consultation room, Cape Town"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 ring-1 ring-inset ring-navy/10" />
+            </div>
+          </ScrollReveal>
+        </div>
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-10"

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Lock, Car, Scale, ArrowRight } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
+import { IMAGES } from '../../data/images'
 
 const featured = [
   {
@@ -43,21 +44,34 @@ export default function ServicesPreview() {
           <SectionLabel>Our Services</SectionLabel>
         </ScrollReveal>
 
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-          <ScrollReveal delay={0.1}>
-            <h2 className="font-display text-h2 text-navy max-w-lg">
-              Vigorous defence across all serious criminal matters.
-            </h2>
-          </ScrollReveal>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 mb-14 items-end">
+          <div className="lg:col-span-3 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <ScrollReveal delay={0.1}>
+              <h2 className="font-display text-h2 text-navy max-w-lg">
+                Vigorous defence across all serious criminal matters.
+              </h2>
+            </ScrollReveal>
 
-          <ScrollReveal delay={0.2}>
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 font-sans text-sm text-navy hover:text-navy-hover transition-colors duration-200 group flex-shrink-0"
-            >
-              View All Services
-              <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
-            </Link>
+            <ScrollReveal delay={0.2}>
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 font-sans text-sm text-navy hover:text-navy-hover transition-colors duration-200 group flex-shrink-0"
+              >
+                View All Services
+                <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
+              </Link>
+            </ScrollReveal>
+          </div>
+
+          <ScrollReveal delay={0.15} direction="right" className="lg:col-span-2">
+            <div className="relative aspect-[4/3] rounded-sm overflow-hidden">
+              <img
+                src={IMAGES.office.interior}
+                alt="Law firm office workspace, Bellville Cape Town"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
           </ScrollReveal>
         </div>
 
