@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import { Phone, ChevronDown } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import GoldButton from '../ui/GoldButton'
 import OutlineButton from '../ui/OutlineButton'
 import { IMAGES } from '../../data/images'
@@ -108,7 +108,6 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 1.0, ease }}
         >
           <GoldButton href="tel:0726045324" white className="hero-action">
-            <Phone size={14} />
             Call Now — 24/7 Emergency
           </GoldButton>
           <OutlineButton to="/contact" className="hero-action border-white text-white hover:bg-white hover:text-navy">

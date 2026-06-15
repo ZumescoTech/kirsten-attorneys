@@ -92,7 +92,6 @@ export default function Navbar() {
                 className="btn-navy site-nav__cta hidden lg:inline-flex items-center gap-2"
                 style={{ padding: '10px 20px' }}
               >
-                <Phone size={12} />
                 Call 24/7
               </a>
               <button

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Phone, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import ScrollReveal from '../ui/ScrollReveal'
 import GoldButton from '../ui/GoldButton'
 import { IMAGES } from '../../data/images'
@@ -55,7 +55,6 @@ export default function CTABanner() {
         <ScrollReveal delay={0.45}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <GoldButton href="tel:0726045324" white>
-              <Phone size={16} />
               072 604 5324 — Call Now
             </GoldButton>
             <Link

@@ -1,4 +1,3 @@
-import { Phone } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 import GoldButton from '../ui/GoldButton'
@@ -85,7 +84,6 @@ export default function OfficeHours() {
                   hours a day, 7 days a week across the Western Cape.
                 </p>
                 <GoldButton href="tel:0726045324">
-                  <Phone size={16} />
                   Call 072 604 5324
                 </GoldButton>
               </div>
