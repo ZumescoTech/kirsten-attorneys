@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Lock, Car, Scale, ArrowRight } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
@@ -37,6 +37,7 @@ const cardVariants = {
 }
 
 export default function ServicesPreview() {
+  const prefersReduced = useReducedMotion()
   return (
     <section className="py-[7.5rem] bg-bg-light">
       <div className="max-w-content mx-auto px-6">
@@ -82,15 +83,19 @@ export default function ServicesPreview() {
           whileInView="visible"
           viewport={{ once: true, margin: '0px 0px -80px 0px', amount: 0.15 }}
         >
-          {featured.map(({ id, title, body, Icon }) => (
+          {featured.map(({ id, title, body, Icon }, i) => (
             <motion.div
               key={id}
               variants={cardVariants}
               className="card-hover bg-white border border-border-subtle rounded-sm p-8 overflow-hidden"
             >
-              <span className="font-sans text-4xl font-bold text-navy opacity-20 block mb-5 leading-none">
+              <motion.span
+                className="font-sans text-4xl font-bold text-navy opacity-20 block mb-5 leading-none"
+                animate={prefersReduced ? {} : { scale: [1, 1.08, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
+              >
                 {id}
-              </span>
+              </motion.span>
               <Icon size={22} className="text-navy opacity-40 mb-4" />
               <h3 className="font-display text-h3 text-navy mb-3">{title}</h3>
               <p className="font-sans text-sm text-text-body leading-relaxed font-light">{body}</p>

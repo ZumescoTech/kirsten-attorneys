@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Phone, ChevronDown } from 'lucide-react'
 import GoldButton from '../ui/GoldButton'
 import OutlineButton from '../ui/OutlineButton'
@@ -8,10 +8,12 @@ const seoWords = seoHeadline.split(' ')
 const taglineHeadline = "Don't let a criminal charge ruin your life."
 const taglineWords = taglineHeadline.split(' ')
 const ease = [0.4, 0, 0.2, 1]
+const dropEase = [0.34, 1.56, 0.64, 1]
 
 const badges = ['Former NPA Prosecutor', '29+ Years Experience', 'Multilingual', 'Western Cape Wide']
 
 export default function Hero() {
+  const prefersReduced = useReducedMotion()
   return (
     <section
       className="relative flex flex-col items-center justify-center text-center overflow-hidden"
@@ -19,7 +21,14 @@ export default function Hero() {
       aria-label="Hero"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-center bg-cover bg-no-repeat" style={{ backgroundImage: `url('${IMAGES.hero.home}')` }} aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: `url('${IMAGES.hero.home}')`,
+          backgroundPosition: IMAGES.heroBgPosition,
+        }}
+        aria-hidden="true"
+      />
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(7,29,54,0.82) 0%, rgba(11,42,78,0.75) 100%)' }} aria-hidden="true" />
 
       {/* Content */}
@@ -41,16 +50,21 @@ export default function Hero() {
             <motion.span
               key={i}
               className="inline-block mr-[0.2em] last:mr-0"
-              initial={{ opacity: 0, y: 24 }}
+              initial={prefersReduced ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 + i * 0.07, ease }}
+              transition={{ duration: 0.5, delay: 0.15 + i * 0.12, ease: dropEase }}
             >
               {word}
             </motion.span>
           ))}
-          <span className="block text-[0.42em] font-medium tracking-[-0.05em] mt-3 opacity-90">
+          <motion.span
+            className="block text-[0.42em] font-medium tracking-[-0.05em] mt-3"
+            initial={prefersReduced ? { opacity: 0.9, y: 0 } : { opacity: 0, y: -20 }}
+            animate={{ opacity: 0.9, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 + seoWords.length * 0.12, ease: dropEase }}
+          >
             André Kirsten Attorneys
-          </span>
+          </motion.span>
         </h1>
 
         {/* Emotional headline */}

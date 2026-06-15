@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 import { IMAGES } from '../../data/images'
@@ -9,17 +9,19 @@ const pillars = [
   { id: '03', title: 'Personalized Attention',  body: 'No junior attorneys, no handoffs. André personally handles every client and every case — keeping you informed, comfortable, and supported in a time when it truly matters.' },
 ]
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
-}
-
-const itemVariants = {
-  hidden:  { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } },
-}
-
 export default function ValueProp() {
+  const prefersReduced = useReducedMotion()
+
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.18, delayChildren: 0.05, staggerDirection: -1 } },
+  }
+
+  const itemVariants = {
+    hidden:  prefersReduced ? { opacity: 1, x: 0 } : { opacity: 0, x: -60 },
+    visible: { opacity: 1, x: 0, transition: prefersReduced ? { duration: 0 } : { duration: 0.55, ease: [0.4, 0, 0.2, 1] } },
+  }
+
   return (
     <section className="py-24 bg-bg-light">
       <div className="max-w-content mx-auto px-6">
@@ -50,11 +52,15 @@ export default function ValueProp() {
           whileInView="visible"
           viewport={{ once: true, margin: '0px 0px -60px 0px', amount: 0.1 }}
         >
-          {pillars.map(({ id, title, body }) => (
+          {pillars.map(({ id, title, body }, i) => (
             <motion.div key={id} variants={itemVariants} className="group">
-              <span className="font-display text-5xl font-semibold text-navy opacity-15 group-hover:opacity-30 transition-opacity duration-300 block mb-4 leading-none">
+              <motion.span
+                className="font-display text-5xl font-semibold text-navy opacity-15 group-hover:opacity-30 transition-opacity duration-300 block mb-4 leading-none"
+                animate={prefersReduced ? {} : { scale: [1, 1.08, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
+              >
                 {id}
-              </span>
+              </motion.span>
               <h3 className="font-display font-semibold text-h3 text-navy mb-3">{title}</h3>
               <p className="font-sans text-sm text-text-body leading-relaxed font-light">{body}</p>
             </motion.div>

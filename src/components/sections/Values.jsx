@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 
@@ -31,6 +31,7 @@ const itemVariants = {
 }
 
 export default function Values() {
+  const prefersReduced = useReducedMotion()
   return (
     <section className="py-[7.5rem] bg-white">
       <div className="max-w-content mx-auto px-6">
@@ -50,11 +51,15 @@ export default function Values() {
           whileInView="visible"
           viewport={{ once: true, margin: '0px 0px -80px 0px', amount: 0.15 }}
         >
-          {pillars.map(({ id, title, body }) => (
+          {pillars.map(({ id, title, body }, i) => (
             <motion.div key={id} variants={itemVariants} className="group">
-              <span className="font-sans text-5xl font-bold text-navy opacity-15 group-hover:opacity-30 transition-opacity duration-300 block mb-5 leading-none">
+              <motion.span
+                className="font-sans text-5xl font-bold text-navy opacity-15 group-hover:opacity-30 transition-opacity duration-300 block mb-5 leading-none"
+                animate={prefersReduced ? {} : { scale: [1, 1.08, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
+              >
                 {id}
-              </span>
+              </motion.span>
               <h3 className="font-display text-h3 text-navy mb-3">{title}</h3>
               <p className="font-sans text-sm text-text-body leading-relaxed font-light">{body}</p>
             </motion.div>
