@@ -1,4 +1,4 @@
-import { Phone, MapPin, Printer, Globe, Mail, MessageSquare } from 'lucide-react'
+import { Phone, MapPin, Building2, Printer, Video, Mail, MessageCircle } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 import GoldButton from '../ui/GoldButton'
@@ -51,7 +51,7 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin size={16} className="text-navy opacity-20 mt-0.5 flex-shrink-0" />
+                  <Building2 size={16} className="text-navy opacity-40 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-sans text-xs uppercase tracking-[0.1em] text-text-muted mb-1">Postal Address</p>
                     <p className="font-sans text-sm text-text-body leading-relaxed font-light">
@@ -70,7 +70,7 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MessageSquare size={16} className="text-navy opacity-40 mt-0.5 flex-shrink-0" />
+                  <MessageCircle size={16} className="text-navy opacity-40 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-sans text-xs uppercase tracking-[0.1em] text-text-muted mb-1">WhatsApp</p>
                     <p className="font-sans text-sm text-text-body font-light">072 604 5324</p>
@@ -84,7 +84,7 @@ export default function ContactSection() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Globe size={16} className="text-navy opacity-40 mt-0.5 flex-shrink-0" />
+                  <Video size={16} className="text-navy opacity-40 mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="font-sans text-xs uppercase tracking-[0.1em] text-text-muted mb-1">Video Consultations (Skype)</p>
                     <p className="font-sans text-sm text-text-body font-light">andre.kirsten.attorney — pre-arrange via phone or email</p>

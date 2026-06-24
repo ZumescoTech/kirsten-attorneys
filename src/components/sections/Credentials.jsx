@@ -1,17 +1,18 @@
 import { motion } from 'framer-motion'
+import { GraduationCap, BookOpen, BadgeCheck, Gavel, Shield, Building2, Microscope, Globe, MapPin } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 
 const credentials = [
-  { id: '01', title: 'LLB', detail: 'University of the Free State, 1996' },
-  { id: '02', title: 'Articles Completed', detail: 'Northern Cape, 1997' },
-  { id: '03', title: 'Admitted Attorney', detail: 'Law Society of South Africa' },
-  { id: '04', title: 'NPA Prosecutor', detail: 'National Prosecuting Authority — Eastern Free State & Bellville, 1998–2005' },
-  { id: '05', title: 'Defence Attorney', detail: 'Legal Aid SA, Cape Town Justice Centre — Cape Town, Stellenbosch, Malmesbury & Bellville, 2005–2016' },
-  { id: '06', title: 'Principal Attorney', detail: 'André Kirsten Attorneys, Bellville, 2016–present' },
-  { id: '07', title: 'Specialist Training', detail: 'DNA evidence, fingerprint evidence, ballistic evidence' },
-  { id: '08', title: 'Languages', detail: 'English · Afrikaans · isiXhosa' },
-  { id: '09', title: 'Practice Area', detail: 'Western Cape — all courts including High Court & Magistrates\' Courts' },
+  { id: '01', title: 'LLB', detail: 'University of the Free State, 1996', Icon: GraduationCap },
+  { id: '02', title: 'Articles Completed', detail: 'Northern Cape, 1997', Icon: BookOpen },
+  { id: '03', title: 'Admitted Attorney', detail: 'Law Society of South Africa', Icon: BadgeCheck },
+  { id: '04', title: 'NPA Prosecutor', detail: 'National Prosecuting Authority — Eastern Free State & Bellville, 1998–2005', Icon: Gavel },
+  { id: '05', title: 'Defence Attorney', detail: 'Legal Aid SA, Cape Town Justice Centre — Cape Town, Stellenbosch, Malmesbury & Bellville, 2005–2016', Icon: Shield },
+  { id: '06', title: 'Principal Attorney', detail: 'André Kirsten Attorneys, Bellville, 2016–present', Icon: Building2 },
+  { id: '07', title: 'Specialist Training', detail: 'DNA evidence, fingerprint evidence, ballistic evidence', Icon: Microscope },
+  { id: '08', title: 'Languages', detail: 'English · Afrikaans · isiXhosa', Icon: Globe },
+  { id: '09', title: 'Practice Area', detail: 'Western Cape — all courts including High Court & Magistrates\' Courts', Icon: MapPin },
 ]
 
 const containerVariants = {
@@ -44,15 +45,15 @@ export default function Credentials() {
           whileInView="visible"
           viewport={{ once: true, margin: '0px 0px -80px 0px', amount: 0.1 }}
         >
-          {credentials.map(({ id, title, detail }) => (
+          {credentials.map(({ id, title, detail, Icon }) => (
             <motion.div
               key={id}
               variants={itemVariants}
-              className="group flex items-start gap-6 py-6 border-b border-border-subtle last:border-b-0 hover:border-navy transition-colors duration-300"
+              className="group flex items-start gap-5 py-6 border-b border-border-subtle last:border-b-0 hover:border-navy transition-colors duration-300"
             >
-              <span className="font-sans text-xs text-text-muted group-hover:text-navy transition-colors duration-300 pt-1 flex-shrink-0 w-8">
-                {id}
-              </span>
+              <div className="inline-flex items-center justify-center w-8 h-8 rounded-sm bg-navy/5 flex-shrink-0 mt-0.5 group-hover:bg-navy/10 transition-colors duration-300">
+                <Icon size={15} className="text-navy opacity-50 group-hover:opacity-70 transition-opacity duration-300" aria-hidden="true" />
+              </div>
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between w-full gap-1">
                 <h3 className="font-display text-lg text-navy flex-shrink-0 mr-8">
                   {title}

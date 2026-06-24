@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Lock, Car, Scale, ArrowRight } from 'lucide-react'
+import { KeyRound, Car, Gavel, ArrowRight } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 import { IMAGES } from '../../data/images'
@@ -10,7 +10,7 @@ const featured = [
     id: '01',
     title: 'Bail Applications',
     body: '24/7 emergency bail at police stations after hours and formal bail hearings in court. We come to you — fast, reliable, and on call throughout the year.',
-    Icon: Lock,
+    Icon: KeyRound,
   },
   {
     id: '02',
@@ -22,7 +22,7 @@ const featured = [
     id: '03',
     title: 'Serious Criminal Cases',
     body: 'Murder, rape, armed robbery, fraud, drugs, illegal firearms, abalone contraventions, and Financial Institutions Act charges — no case too complex.',
-    Icon: Scale,
+    Icon: Gavel,
   },
 ]
 
@@ -96,7 +96,9 @@ export default function ServicesPreview() {
               >
                 {id}
               </motion.span>
-              <Icon size={22} className="text-navy opacity-40 mb-4" />
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-sm bg-navy/5 mb-5">
+                <Icon size={20} className="text-navy opacity-70" />
+              </div>
               <h3 className="font-display text-h3 text-navy mb-3">{title}</h3>
               <p className="font-sans text-sm text-text-body leading-relaxed font-light">{body}</p>
             </motion.div>

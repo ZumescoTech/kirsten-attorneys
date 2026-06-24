@@ -1,12 +1,13 @@
 import { motion, useReducedMotion } from 'framer-motion'
+import { PhoneCall, Eye, UserCheck } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import ScrollReveal from '../ui/ScrollReveal'
 import { IMAGES } from '../../data/images'
 
 const pillars = [
-  { id: '01', title: '24/7 Availability',      body: 'We are on call 24 hours a day, throughout the year. Arrests, bail hearings, and crises do not follow business hours — and neither do we. Call 072 604 5324 at any time.' },
-  { id: '02', title: 'Prosecutorial Insight',   body: 'André spent 7 years as an NPA prosecutor before switching to defence. He knows precisely how the state builds its case, where it is vulnerable, and how to dismantle it.' },
-  { id: '03', title: 'Personalized Attention',  body: 'No junior attorneys, no handoffs. André personally handles every client and every case — keeping you informed, comfortable, and supported in a time when it truly matters.' },
+  { id: '01', title: '24/7 Availability',      body: 'We are on call 24 hours a day, throughout the year. Arrests, bail hearings, and crises do not follow business hours — and neither do we. Call 072 604 5324 at any time.', Icon: PhoneCall },
+  { id: '02', title: 'Prosecutorial Insight',   body: 'André spent 7 years as an NPA prosecutor before switching to defence. He knows precisely how the state builds its case, where it is vulnerable, and how to dismantle it.', Icon: Eye },
+  { id: '03', title: 'Personalized Attention',  body: 'No junior attorneys, no handoffs. André personally handles every client and every case — keeping you informed, comfortable, and supported in a time when it truly matters.', Icon: UserCheck },
 ]
 
 export default function ValueProp() {
@@ -52,15 +53,20 @@ export default function ValueProp() {
           whileInView="visible"
           viewport={{ once: true, margin: '0px 0px -60px 0px', amount: 0.1 }}
         >
-          {pillars.map(({ id, title, body }, i) => (
+          {pillars.map(({ id, title, body, Icon }, i) => (
             <motion.div key={id} variants={itemVariants} className="group">
-              <motion.span
-                className="font-display text-5xl font-semibold text-navy opacity-15 group-hover:opacity-30 transition-opacity duration-300 block mb-4 leading-none"
-                animate={prefersReduced ? {} : { scale: [1, 1.08, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
-              >
-                {id}
-              </motion.span>
+              <div className="flex items-center gap-3 mb-4">
+                <motion.span
+                  className="font-display text-4xl font-semibold text-navy opacity-15 group-hover:opacity-30 transition-opacity duration-300 leading-none"
+                  animate={prefersReduced ? {} : { scale: [1, 1.08, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
+                >
+                  {id}
+                </motion.span>
+                <div className="inline-flex items-center justify-center w-9 h-9 rounded-sm bg-navy/5">
+                  <Icon size={17} className="text-navy opacity-60" aria-hidden="true" />
+                </div>
+              </div>
               <h3 className="font-display font-semibold text-h3 text-navy mb-3">{title}</h3>
               <p className="font-sans text-sm text-text-body leading-relaxed font-light">{body}</p>
             </motion.div>

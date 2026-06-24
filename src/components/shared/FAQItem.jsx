@@ -18,9 +18,9 @@ export default function FAQItem({ question, answer }) {
         <motion.div
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="flex-shrink-0 text-navy"
+          className="flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full border border-border-mid group-hover:border-navy transition-colors duration-200 text-navy"
         >
-          <Plus size={20} />
+          <Plus size={16} />
         </motion.div>
       </button>
 
